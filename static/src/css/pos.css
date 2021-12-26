@@ -1,0 +1,396 @@
+.ticket-button {
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    font-size: medium;
+    color: white;
+}
+
+.ticket-button.highlight {
+    background: rgb(104,69,95);
+
+}
+
+.ticket-button:hover {
+    /*background: rgb(104,69,95);*/
+    background: rgb(75,75,75);
+    cursor: pointer;
+}
+
+.ticket-button .with-badge {
+    margin-right: 0.7em;
+    font-size: larger;
+    }
+
+.ticket-screen {
+    font-size: medium;
+}
+
+.ticket-screen .orders {
+    display: flex;
+    flex-flow: column nowrap;
+    overflow: hidden;
+    overflow-y: hidden;
+    overflow-y: auto;
+}
+
+.ticket-screen .orders .header-row{
+    display: flex;
+    flex-flow: row nowrap;
+    flex: 1;
+    justify-content: space-evenly;
+    background: #868686;
+    color: white;
+}
+
+.ticket-screen .orders .order-row {
+    display: flex;
+    flex-flow: row nowrap;
+    flex: 1;
+    justify-content: space-evenly;
+}
+
+.ticket-screen .orders .col {
+    display: flex;
+    flex: 1;
+    padding: 10px;
+}
+
+.ticket-screen .orders .col.start {
+    justify-content: flex-start;
+}
+
+.ticket-screen .orders .col.center {
+    justify-content: center;
+}
+
+.ticket-screen .orders .col.end {
+    justify-content: flex-end;
+}
+
+.ticket-screen .orders .col.very-narrow {
+    flex: 0.2;
+}
+
+.ticket-screen .orders .col.narrow {
+    flex: 0.5;
+}
+
+.ticket-screen .orders .col.wide {
+    flex: 1.5;
+}
+
+.ticket-screen .order-row:nth-child(odd) {
+    background: #DDD;
+}
+
+.ticket-screen .order-row:nth-child(even) {
+    background: white;
+}
+
+.ticket-screen .order-row:hover {
+    background: rgb(110,200,155);
+    color: white;
+}
+
+.ticket-screen .pointer {
+    cursor: pointer;
+}
+
+.ticket-screen .controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 20px;
+    border-bottom: dashed 1px rgb(215,215,215);
+    flex: 0 0 80px;
+}
+
+.ticket-screen .controls button {
+    font-size: medium;
+    padding: 12px;
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+.ticket-screen .controls button.discard {
+    background: rgb(230, 230, 230);
+    border: solid 1px rgb(209, 209, 209);
+}
+
+.ticket-screen .controls button.highlight {
+    background: #6EC89B;
+    border: solid 1px #64AF8A;
+    color: white;
+}
+
+.ticket-screen .pos-search-bar {
+    vertical-align: middle;
+    white-space: nowrap;
+    position: relative;
+    display: flex;
+    max-width: 500px;
+    flex: 1;
+}
+
+.ticket-screen .pos-search-bar .search {
+    display: flex;
+    position: relative;
+    flex: 1;
+}
+
+.ticket-screen .pos-search-bar .search input {
+    height: 40px;
+    font-size: medium;
+    color: #63717f;
+    padding-left: 40px;
+    border: solid 1px rgb(209, 209, 209);
+    flex: 1;
+}
+
+.ticket-screen .pos-search-bar .radius-right {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.ticket-screen .pos-search-bar .radius-left {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.ticket-screen .pos-search-bar .search input:focus {
+    outline: none;
+}
+
+.ticket-screen .pos-search-bar .search .search-icon {
+    position: absolute;
+    left: 15px;
+    top: 12px;
+    z-index: 1;
+    color: #4f5b66;
+}
+
+.ticket-screen .pos-search-bar .search ul {
+    background: white;
+    position: absolute;
+    top: calc(100% + 5px);
+    right: 2px;
+    left: 2px;
+    box-shadow: 1px 1px 3px grey;
+    font-size: small;
+}
+
+.ticket-screen .pos-search-bar .search li {
+    color: rgb(1,160,157);
+    margin: 0.2em 0;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    padding-left: 35px;
+}
+
+.ticket-screen .pos-search-bar .search li:hover {
+    background: #DDD;
+}
+
+.ticket-screen .pos-search-bar .search li .field {
+    font-style: italic;
+}
+
+.ticket-screen .pos-search-bar .search li .term {
+    font-weight: bold;
+}
+
+.ticket-screen .pos-search-bar .search li.highlight {
+    background: #DDD;
+}
+
+.ticket-screen .pos-search-bar .filter .down-icon {
+    position: absolute;
+    right: 13px;
+    top: 10px;
+}
+
+.ticket-screen .pos-search-bar .filter {
+    height: 40px;
+    background: white;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 20px;
+    padding-right: 40px;
+    border: solid 1px rgb(209, 209, 209);
+    border-left: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    max-width: 150px;
+    font-size: medium;
+}
+
+.ticket-screen .pos-search-bar .filter:hover {
+    color: #868686;
+}
+
+.ticket-screen .pos-search-bar .filter .options {
+    display: block;
+    position: absolute;
+    top: calc(100% + 5px);
+    right: 0;
+    z-index: 1;
+    box-shadow: 1px 1px 5px grey;
+    padding: 0.5em 0;
+    background: white;
+    color: #555555;
+}
+
+.ticket-screen .pos-search-bar .filter ul.options li {
+    padding: 0.2em 1.2em;
+    border-top: none;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.ticket-screen .pos-search-bar .filter ul.options li:hover {
+    background-color: #DDD;
+}
+
+.ticket-screen .pos-search-bar .search {
+    display: flex;
+}
+
+.screen .screen-content{
+    position: relative;
+    margin: 0px auto;
+    max-width: 1024px;
+    text-align: left;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.screen .screen-full-width{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+@media screen and (min-width: 1024px) {
+    .screen .screen-content{
+        border-left:  dashed 1px rgb(215,215,215);
+        border-right: dashed 1px rgb(215,215,215);
+    }
+}
+
+.screen .top-content{
+    height: 64px;
+    border-bottom: dashed 1px rgb(215,215,215);
+    text-align: center;
+    display: flex;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.screen .top-content .button {
+    line-height: 32px;
+    padding: 3px 13px;
+    font-size: 20px;
+    background: rgb(230, 230, 230);
+    margin-top: 12px;
+    margin-bottom: 12px;
+    margin-left: 6px;
+    margin-right: 6px;
+    border-radius: 3px;
+    border: solid 1px rgb(209, 209, 209);
+    cursor: pointer;
+    transition: all 150ms linear;
+}
+.screen .top-content .button:hover {
+    background: #efefef;
+}
+.screen .top-content .button:active {
+    background: black;
+    border-color: black;
+    color: white;
+}
+.screen .top-content .button.highlight {
+    background: rgb(110,200,155);
+    color: white;
+    border: solid 1px rgb(110,200,155);
+}
+.screen .top-content .button.highlight:hover {
+    background: rgb(120,210,165);
+}
+
+.screen .top-content .top-content-center {
+    flex-grow: 1;
+}
+
+.screen .main-content{
+    display: flex;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    overflow-y: auto;
+}
+.screen .left-content{
+    overflow-x: hidden;
+    overflow-y: auto;
+    border-right: dashed 1px rgb(215,215,215);
+    flex-grow: 1;
+    min-width: 200px;
+}
+
+.screen .right-content{
+    overflow-x: hidden;
+    overflow-y: auto;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+    .screen .left-content {
+        max-width: 34%
+    }
+}
+.screen .centered-content{
+    border-right: dashed 1px rgb(215,215,215);
+    border-left: dashed 1px rgb(215,215,215);
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-width: 512px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.screen .full-content{
+    position: absolute;
+    right: 0%; top: 65px; bottom: 0px;
+    left: 0%;
+}
+.ticket-screen .controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 20px;
+    border-bottom: dashed 1px rgb(215,215,215);
+    flex: 0 0 80px;
+}
+
+.ticket-screen .controls button {
+    font-size: medium;
+    padding: 12px;
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+.ticket-screen .controls button.discard {
+    background: rgb(230, 230, 230);
+    border: solid 1px rgb(209, 209, 209);
+}
+
+.ticket-screen .controls button.highlight {
+    background: #6EC89B;
+    border: solid 1px #64AF8A;
+    color: white;
+}

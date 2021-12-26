@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+     <template id="pos_assets_ext" inherit_id="point_of_sale.assets">
+        <xpath expr="." position="inside">
+           <script type="text/javascript" src="/pos_customize/static/src/js/delivery_popup_widget.js"/>
+           <script type="text/javascript" src="/pos_customize/static/src/js/TicketButtonWidget.js"/>
+            <script type="text/javascript" src="/pos_customize/static/src/js/ShowOrdersWidget.js"/>
+<!--            <script type="text/javascript" src="/pos_customize/static/src/js/TicketScreen.js"/>-->
+            <link rel="stylesheet" href="/pos_customize/static/src/css/pos.css"/>
+        </xpath>
+    </template>
+</odoo>

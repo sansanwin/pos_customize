@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--inherit ProductScreen and add DeliveryButtonWidget -->
+<template id="template" xml:space="preserve">
+    <t t-name="PopupNote" owl="1">
+        <div class='control-button' t-on-click="display_popup_note">
+            <i class="fa fa-dashboard">Delivery</i>
+        </div>
+    </t>
+
+<!--     <t t-name="WidgetLink" t-inherit="point_of_sale.PaymentScreenWidget" t-inherit-mode="extension" owl="1">-->
+<!--        <xpath expr="//div[hasclass('payment-buttons')]" position="inside">-->
+<!--            <PopupNote />-->
+<!--        </xpath>-->
+<!--    </t>-->
+</template>

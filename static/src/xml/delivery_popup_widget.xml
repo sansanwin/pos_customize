@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--inherit ProductScreen and add DeliveryButtonWidget -->
+<templates id="template" xml:space="preserve">
+    <t t-name="DeliveryPopupWidget_Link" t-inherit="point_of_sale.PaymentScreenWidget" t-inherit-mode="extension" owl="1">
+        <xpath expr="//div[hasclass('payment-buttons')]" position="inside">
+             <div class='button popup_notes'>
+                <i class='fa fa-address-book' /> Delivery Address
+            </div>
+        </xpath>
+    </t>
+
+    <t t-name="PopupNote">
+        <div role="dialog" class="modal-dialog">
+            <div class="popup popup-textinput">
+<!--            This is the header -->
+                <header class="title">
+                    <t t-esc=" widget.options.title || '' " />
+                </header>
+<!--	        This is the input field-->
+                <input type='text' class="popup_note" name="popup_note"></input>
+                <div class="footer">
+                    <div class="button confirm">
+                        Confirm
+                    </div>
+                    <div class="button cancel">
+                        Cancel
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+
+<!--     <t t-name="DeliveryPopupWidget">-->
+<!--        <div role="dialog" class="modal-dialog">-->
+<!--            <div class="popup popup-textinput">-->
+<!--                <header class="title"><t t-esc=" widget.options.title || '' " /></header>-->
+<!--                <input type='text' t-att-value="widget.options.value || ''"></input>-->
+<!--                <div class="footer">-->
+<!--                    <div class="button confirm">-->
+<!--                        Ok-->
+<!--                    </div>-->
+<!--                    <div class="button cancel">-->
+<!--                        Cancel-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </t>-->
+</templates>

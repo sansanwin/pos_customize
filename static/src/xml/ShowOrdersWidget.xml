@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="ShowOrdersWidget">
+      <div class="clientlist-screen screen">
+        <div class="screen-content">
+           <section class="top-content">
+              <span class='button back'>
+                 <i class='fa fa-angle-double-left'/>
+                    Cancel
+              </span>
+              <span class='searchbox' style="margin-left:217px !important;">
+                 <input placeholder='Search Orders by ref' />
+                 <span class='search-clear'/>
+              </span>
+              </section>
+              <section class="full-content">
+                <div class='window'>
+                  <section class='subwindow collapsed'>
+                     <div class='subwindow-container collapsed'>
+                       <div class='subwindow-container-fix order-details-contents'>
+                       </div>
+                     </div>
+                  </section>
+                  <section class='subwindow'>
+                    <div class='subwindow-container'>
+                      <div class='subwindow-container-fix touch-scrollable scrollable-y'>
+                        <table class='client-list'>
+                         <thead>
+                           <tr>
+                             <th>Reciept Ref.</th>
+                             <th>Partner</th>
+                             <th>Session</th>
+                             <th>Amount Total</th>
+                             <th>State</th>
+                           </tr>
+                         </thead>
+                         <tbody class='show-order-list-lines'>
+                         </tbody>
+                      </table>
+                      </div>
+                    </div>
+                 </section>
+                </div>
+            </section>
+          </div>
+       </div>
+    </t>
+    <t t-name="ShowOrderLines">
+        <tr class='order-line' t-att-data-id='order.id'>
+            <td><t t-esc='order.pos_reference' /></td>
+            <td><t t-esc='order.partner_id[1]' /></td>
+            <td><t t-esc='order.session_id[1]'/></td>
+            <td><t t-esc='order.amount_total'/></td>
+            <td><t t-esc='order.state'/></td>
+        </tr>
+    </t>
+
+
+<!--    <t t-name="OrderDetails">-->
+<!--        <section class='client-details'>-->
+<!--            <div class='client-picture'>-->
+<!--                <img t-att-src='widget.partner_icon_url(partner.id)' alt="Partner logo" style="width: 64px; height: 64px; object-fit: cover;"/>-->
+<!--            </div>-->
+<!--            <div class='client-name'><t t-esc='order.pos_reference' /></div>-->
+<!--            <div class='edit-buttons'>-->
+<!--                <div class='button edit'><i class='fa fa-pencil-square' role="img" aria-label="Edit" title="Edit"/></div>-->
+<!--            </div>-->
+<!--            <div class='client-details-box clearfix'>-->
+<!--                <div class='client-details-left'>-->
+<!--                    <div class='client-detail'>-->
+<!--                        <span class='label'>Customer</span>-->
+<!--                        <t t-if='order.partner_id[1]'>-->
+<!--                            <span class='detail client-email'><t t-esc='order.partner_id[1]' /></span>-->
+<!--                        </t>-->
+<!--                    </div>-->
+<!--                    <div class='client-detail'>-->
+<!--                        <span class='label'>Session</span>-->
+<!--                        <t t-if='order.session_id[1]'>-->
+<!--                            <span class='detail client-phone'><t t-esc='order.session_id[1]' /></span>-->
+<!--                        </t>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class='client-details-right'>-->
+<!--                    <div class='client-detail'>-->
+<!--                        <span class='label'>Total Amount</span>-->
+<!--                        <t t-if='order.amount_total'>-->
+<!--                            <span class='detail client-id'><t t-esc='order.amount_total'/></span>-->
+<!--                        </t>-->
+<!--                    </div>-->
+<!--                    <div class='client-detail'>-->
+<!--                        <span class='label'>Status</span>-->
+<!--                        <t t-if='order.state'>-->
+<!--                            <span class='detail vat'><t t-esc='order.state'/></span>-->
+<!--                        </t>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </section>-->
+<!--    </t>-->
+
+</templates>
