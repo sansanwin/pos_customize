@@ -26,7 +26,7 @@ odoo.define('pos_customize.TicketScreen', function (require) {
             this.filter = null;
 
             var order = this.pos.get_order();
-            console.log('orderlist[13]', orders[13]);
+            //console.log('orderlist[13]', orders[13]);
             var data = {
             widget: this,
              pos: this.pos,
@@ -35,7 +35,7 @@ odoo.define('pos_customize.TicketScreen', function (require) {
             orders_list: orders[13],
             //paymentlines: order.get_paymentlines(),
              };
-            console.log('data', data);
+            //console.log('data', data);
             var receipt = QWeb.render('TicketScreen', data);
         },
 

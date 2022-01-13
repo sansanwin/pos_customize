@@ -15,6 +15,8 @@ odoo.define('pos_customize.ShowOrdersWidget ', function (require) {
 
         init: function(options){
             this._super(parent,options);
+            this.filter = null;
+            this.searchDetails = {};
             this.hidden = false;
             this.order_cache = new pos_screens.DomCache();//new DomCache();
             this.order_by_id = {};
@@ -51,8 +53,21 @@ odoo.define('pos_customize.ShowOrdersWidget ', function (require) {
 //                    this.close();
 //                    }
 //            });
+            //filter orders by session_id
+            //console.log('session',this.pos.pos_session.id)
             var pos_orders = this.pos.pos_orders;
-            this.render_list(pos_orders);
+            //console.log('pos_orders before filter',pos_orders);
+            var filtered_orders = [];
+            for (var i in pos_orders) {
+                if(this.pos.pos_session.id === pos_orders[i].session_id[0])
+                {
+                   // console.log(' success session',pos_orders[i].session_id[0], pos_orders[i].id)
+                    filtered_orders[i] = pos_orders[pos_orders[i].id];
+                    //console.log('filtered_orders',filtered_orders);
+                }
+            }
+
+            this.render_list(filtered_orders);
             var search_timeout = null;
             if(this.pos.config.iface_vkeyboard && this.chrome.widget.keyboard){
                 this.chrome.widget.keyboard.connect(this.$('.searchbox input'));
@@ -559,7 +574,7 @@ odoo.define('pos_customize.ShowOrdersWidget ', function (require) {
         fields: ['id', 'name', 'session_id', 'state', 'pos_reference', 'partner_id', 'amount_total','lines', 'amount_tax','sequence_number', 'fiscal_position_id', 'pricelist_id', 'create_date'],
         domain: function(self){ return [['company_id','=',self.company.id]]; },
         loaded: function (self, pos_orders) {
-           console.log('models.load_models');
+           //console.log('models.load_models');
 
             var orders = [];
             for (var i in pos_orders){
@@ -575,7 +590,7 @@ odoo.define('pos_customize.ShowOrdersWidget ', function (require) {
 
     models.PosModel = models.PosModel.extend({
       _save_to_server: function (orders, options) {
-      console.log('_save_to_server');
+      //console.log('_save_to_server');
        var result_new = PosModelSuper.prototype._save_to_server.call(this, orders, options);
        var self = this;
        var new_order = {};

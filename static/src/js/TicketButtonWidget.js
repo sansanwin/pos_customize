@@ -16,6 +16,7 @@ odoo.define('pos_customize.TicketButtonWidget', function (require) {
 
     var chrome = require("point_of_sale.chrome");
     var PosBaseWidget = require('point_of_sale.BaseWidget');
+
     chrome.Chrome.include({
             build_widgets: function(){
                 this.widgets.push({
@@ -38,17 +39,21 @@ odoo.define('pos_customize.TicketButtonWidget', function (require) {
     renderElement: function(){
         var self = this;
         this._super();
+        console.log('count',this.count());
         //console.log('render');
         this.$('.ticket-button').click(function(){
                 self.order_click_handler();
         });
+         //this.$('.ticket-button').prependTo({ 'with-badge':this.pos.get_order_list().length});
+        //console.log('badge -', this.$el = $('<div class="with-badge" t-att-badge="count"/>'));
+
     },
     order_click_handler: function() {
        this.gui.show_screen('ShowOrdersWidget');
        //this.gui.show_screen('TicketScreen');
     },
 
-    get count() {
+    count() {
         if (this.pos) {
             return this.pos.get_order_list().length;
         } else {
